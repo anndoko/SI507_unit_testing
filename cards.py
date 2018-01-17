@@ -137,9 +137,6 @@ if __name__ == "__main__":
 
 
 ### Write unit tests below this line for the cards code above.
-	deck = Deck()
-	card = deck.pop_card()
-	print(type(card))
 # PART 1.
 class TestCard(unittest.TestCase):
 
@@ -208,7 +205,11 @@ class TestCard(unittest.TestCase):
 
 	# Test that the return value of the play_war_game function is a tuple with three elements, the first of which is a string. (This will probably require multiple assertions!)
 	def testReturnValue(self):
-		pass
+		return_value = play_war_game()
+		self.assertEqual = (type(return_value), tuple)
+		self.assertEqual = (len(return_value), 3)
+		self.assertEqual = (type(return_value[0]), str)
+
 	# (and 14)  Write at least 2 additional tests (not repeats of the above described tests). Make sure to include a descriptive message in these two so we can easily see what you are testing!
 	def test(self):
 		pass
