@@ -5,8 +5,8 @@ import unittest
 # Homework 2 - Code
 
 ##COMMENT YOUR CODE WITH:
-# Section Day/Time:
-# People you worked with:
+# Section Day/Time: SI507-008 Mo 1:00PM - 2:30PM
+# People you worked with: No
 
 ######### DO NOT CHANGE PROVIDED CODE #########
 ### Below is the same cards.py code you saw in lecture.
@@ -136,15 +136,69 @@ if __name__ == "__main__":
 ###############################################
 
 ### Write unit tests below this line for the cards code above.
-
+# PART 1.
 class TestCard(unittest.TestCase):
-
 
 	# this is a "test"
 	def test_create(self):
 		card = Card()
 		self.assertEqual(self.card1.suit, "Diamonds")
 		self.assertEqual(self.card1.rank, 3)
+
+	# Test that if you create a card with rank 12, its rank will be "Queen"
+	def testCreateQueen(self):
+		pass
+	# Test that if you create a card with rank 1, its rank will be "Ace"
+	def testCreateAce(self):
+			pass
+	# Test that if you create a card instance with rank 3, its rank will be 3
+	def testCreateRank3(self):
+		pass
+	# Test that if you create a card instance with suit 1, it will be suit "Clubs"
+	def testCreateSuitClubs(self):
+		pass
+	# Test that if you create a card instance with suit 2, it will be suit "Hearts"
+	def testCreateSuitHearts(self):
+		pass
+	# Test that if you create a card instance, it will have access to a variable suit_names that contains the list ["Diamonds","Clubs","Hearts","Spades"]
+	def testSuitNames(self):
+		pass
+	# Test that if you invoke the __str__ method of a card instance that is created with suit=2, rank=7, it returns the string "7 of Hearts"
+	def testCardString1(self):
+		pass
+	# Test that if you invoke the __str__ method of a card instance that is created with suit=3, rank=13, it returns the string "King of Spades"
+	def testCardString2(self):
+		pass
+	# Test that if you create a deck instance, it will have 52 cards in its cards instance variable
+	def testDeckCards(self):
+		pass
+	# Test that if you invoke the pop_card method on a deck, it will return a card instance.
+	def testPopCardInstance(self):
+		pass
+	# Test that if you invoke the pop_card method on a deck, the deck has one fewer cards in it afterwards.
+	def testPopCardFewer(self):
+		pass
+	# Test that the return value of the play_war_game function is a tuple with three elements, the first of which is a string. (This will probably require multiple assertions!)
+	def testReturnValue(self):
+		pass
+	# (and 14)  Write at least 2 additional tests (not repeats of the above described tests). Make sure to include a descriptive message in these two so we can easily see what you are testing!
+	def test(self):
+		pass
+
+# PART 2:
+class TestHand(unittest.TestCase):
+
+	# Test that a hand is initialized properly.
+	def testHandInit(self):
+		pass
+
+	# Test that add_card( ) and remove_card( ) behave as specified
+	def testAddAndRemove(self):
+		pass
+
+	# Test that draw( ) works as specified. Test side effects as well.
+	def testDraw(self):
+		pass
 
 
 #############
