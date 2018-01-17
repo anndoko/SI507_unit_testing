@@ -135,6 +135,8 @@ if __name__ == "__main__":
 ##**##**##**##@##**##**##**## # DO NOT CHANGE OR DELETE THIS COMMENT LINE -- we use it for grading your file
 ###############################################
 
+
+
 ### Write unit tests below this line for the cards code above.
 # PART 1.
 class TestCard(unittest.TestCase):
@@ -187,7 +189,9 @@ class TestCard(unittest.TestCase):
 
 	# Test that if you create a deck instance, it will have 52 cards in its cards instance variable
 	def testDeckCards(self):
-		pass
+		deck = Deck()
+		self.assertEqual(len(deck.cards), 52)
+
 	# Test that if you invoke the pop_card method on a deck, it will return a card instance.
 	def testPopCardInstance(self):
 		pass
