@@ -147,13 +147,19 @@ class TestCard(unittest.TestCase):
 
 	# Test that if you create a card with rank 12, its rank will be "Queen"
 	def testCreateQueen(self):
-		pass
+		card = Card(rank = 12)
+		self.assertEqual(card.rank, "Queen")
+
 	# Test that if you create a card with rank 1, its rank will be "Ace"
 	def testCreateAce(self):
-			pass
+		card = Card(rank = 1)
+		self.assertEqual(card.rank, "Ace")
+
 	# Test that if you create a card instance with rank 3, its rank will be 3
 	def testCreateRank3(self):
-		pass
+		card = Card(rank = 3)
+		self.assertEqual(card.rank, 3)
+
 	# Test that if you create a card instance with suit 1, it will be suit "Clubs"
 	def testCreateSuitClubs(self):
 		pass
