@@ -174,13 +174,17 @@ class TestCard(unittest.TestCase):
 	def testSuitNames(self):
 		card = Card()
 		self.assertEqual(card.suit_names, ["Diamonds","Clubs","Hearts","Spades"])
-		
+
 	# Test that if you invoke the __str__ method of a card instance that is created with suit=2, rank=7, it returns the string "7 of Hearts"
 	def testCardString1(self):
-		pass
+		card = Card(suit = 2, rank = 7)
+		self.assertEqual(card.__str__(), "7 of Hearts")
+
 	# Test that if you invoke the __str__ method of a card instance that is created with suit=3, rank=13, it returns the string "King of Spades"
 	def testCardString2(self):
-		pass
+		card = Card(suit = 3, rank = 13)
+		self.assertEqual(card.__str__(), "King of Spades")
+
 	# Test that if you create a deck instance, it will have 52 cards in its cards instance variable
 	def testDeckCards(self):
 		pass
