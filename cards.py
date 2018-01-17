@@ -162,13 +162,19 @@ class TestCard(unittest.TestCase):
 
 	# Test that if you create a card instance with suit 1, it will be suit "Clubs"
 	def testCreateSuitClubs(self):
-		pass
+		card = Card(suit = 1)
+		self.assertEqual(card.suit, "Clubs")
+
 	# Test that if you create a card instance with suit 2, it will be suit "Hearts"
 	def testCreateSuitHearts(self):
-		pass
+		card = Card(suit = 2)
+		self.assertEqual(card.suit, "Hearts")
+
 	# Test that if you create a card instance, it will have access to a variable suit_names that contains the list ["Diamonds","Clubs","Hearts","Spades"]
 	def testSuitNames(self):
-		pass
+		card = Card()
+		self.assertEqual(card.suit_names, ["Diamonds","Clubs","Hearts","Spades"])
+		
 	# Test that if you invoke the __str__ method of a card instance that is created with suit=2, rank=7, it returns the string "7 of Hearts"
 	def testCardString1(self):
 		pass
