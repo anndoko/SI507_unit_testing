@@ -136,8 +136,10 @@ if __name__ == "__main__":
 ###############################################
 
 
-
 ### Write unit tests below this line for the cards code above.
+	deck = Deck()
+	card = deck.pop_card()
+	print(type(card))
 # PART 1.
 class TestCard(unittest.TestCase):
 
@@ -194,10 +196,16 @@ class TestCard(unittest.TestCase):
 
 	# Test that if you invoke the pop_card method on a deck, it will return a card instance.
 	def testPopCardInstance(self):
-		pass
+		deck = Deck()
+		card = deck.pop_card()
+		self.assertIsInstance(card, Card)
+
 	# Test that if you invoke the pop_card method on a deck, the deck has one fewer cards in it afterwards.
 	def testPopCardFewer(self):
-		pass
+		deck = Deck()
+		deck.pop_card()
+		self.assertLess(len(deck.cards), 52)
+
 	# Test that the return value of the play_war_game function is a tuple with three elements, the first of which is a string. (This will probably require multiple assertions!)
 	def testReturnValue(self):
 		pass
