@@ -240,6 +240,7 @@ class Hand:
 			return card
 		else:
 			return None
+
 	# draw a card from a deck and add it to the hand
 	# side effect: the deck will be depleted by one card
 	# param: the deck from which to draw
@@ -252,7 +253,11 @@ class TestHand(unittest.TestCase):
 
 	# Test that a hand is initialized properly.
 	def testHandInit(self):
-		pass
+		card_list = [] # create a list of cards
+		for n in range(5):
+			card_list.append(Card()) # create 5 cards and add to the card_list
+		hand = Hand(card_list) # the Card class takes the list as its params
+		self.assertEqual(hand.cards, card_list)
 
 	# Test that add_card( ) and remove_card( ) behave as specified
 	def testAddAndRemove(self):
