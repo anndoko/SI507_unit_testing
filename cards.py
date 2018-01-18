@@ -278,8 +278,20 @@ class TestHand(unittest.TestCase):
 
 	# Test that draw( ) works as specified. Test side effects as well.
 	def testDraw(self):
-		pass
+		card_list = []
+		for n in range(5):
+			card_list.append(Card())
+		hand = Hand(card_list) # create a hand
+		len_hand = len(hand.cards) # record the number of cards in the deck before using draw()
+		deck = Deck() # create a deck
+		len_deck = len(deck.cards) # record the number of cards in the deck before using draw()
 
+		# test draw()
+		hand.draw(deck)
+		self.assertEqual(len(hand.cards), len_hand + 1) # one card should be added to the hand
+
+		# test the side effect
+		self.assertEqual(len(deck.cards), len_deck - 1) # the deck should be depleted by one card
 
 #############
 ## The following is a line to run all of the tests you include:
