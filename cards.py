@@ -258,10 +258,23 @@ class TestHand(unittest.TestCase):
 			card_list.append(Card()) # create 5 cards and add to the card_list
 		hand = Hand(card_list) # the Card class takes the list as its params
 		self.assertEqual(hand.cards, card_list)
+		self.assertIsInstance(hand, Hand)
 
 	# Test that add_card( ) and remove_card( ) behave as specified
 	def testAddAndRemove(self):
-		pass
+		card_list = []
+		for n in range(5):
+			card_list.append(Card())
+		hand = Hand(card_list)
+		card = Card()
+
+		# test add_card()
+		hand_add = hand.add_card(card) # add the card
+		self.assertIn(card, hand.cards) # check if the card is in the list
+
+		# test remove_card()
+		hand_remove = hand.remove_card(card) # remove the card
+		self.assertNotIn(card, hand.cards) # check if the card is still in the list
 
 	# Test that draw( ) works as specified. Test side effects as well.
 	def testDraw(self):
