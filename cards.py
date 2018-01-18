@@ -282,9 +282,9 @@ class TestHand(unittest.TestCase):
 		for n in range(5):
 			card_list.append(Card())
 		hand = Hand(card_list) # create a hand
-		len_hand = len(hand.cards) # record the number of cards in the deck before using draw()
+		len_hand = len(hand.cards) # record the number of cards in hand before using draw()
 		deck = Deck() # create a deck
-		len_deck = len(deck.cards) # record the number of cards in the deck before using draw()
+		len_deck = len(deck.cards) # record the number of cards in deck before using draw()
 
 		# test draw()
 		hand.draw(deck)
