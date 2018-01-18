@@ -62,7 +62,7 @@ class Deck(object):
 
 	def sort_cards(self):
 		# Basically, remake the deck in a sorted way
-		# This is assuming you cannot have more than the normal 52 cars in a deck
+		# This is assuming you cannot have more than the normal 52 cards in a deck
 		self.cards = []
 		for suit in range(4):
 			for rank in range(1,14):
@@ -135,7 +135,6 @@ if __name__ == "__main__":
 ##**##**##**##@##**##**##**## # DO NOT CHANGE OR DELETE THIS COMMENT LINE -- we use it for grading your file
 ###############################################
 
-
 ### Write unit tests below this line for the cards code above.
 # PART 1.
 class TestCard(unittest.TestCase):
@@ -205,14 +204,24 @@ class TestCard(unittest.TestCase):
 
 	# Test that the return value of the play_war_game function is a tuple with three elements, the first of which is a string. (This will probably require multiple assertions!)
 	def testReturnValue(self):
-		return_value = play_war_game()
-		self.assertEqual = (type(return_value), tuple)
-		self.assertEqual = (len(return_value), 3)
-		self.assertEqual = (type(return_value[0]), str)
+		return_value = play_war_game(True)
+		self.assertEqual(type(return_value), tuple)
+		self.assertEqual(len(return_value), 3)
+		self.assertEqual(type(return_value[0]), str)
 
 	# (and 14)  Write at least 2 additional tests (not repeats of the above described tests). Make sure to include a descriptive message in these two so we can easily see what you are testing!
-	def test(self):
-		pass
+	def testShuffle1(self):
+		deck = Deck() # create a deck
+		deck.shuffle() # shuffle the deck
+		self.assertIsInstance(deck, Deck) # check if the deck is still an instance of Deck
+
+	def testShuffle2(self):
+		deck = Deck() # create a deck
+		len_of_deck = len(deck.cards) # record the number of cards in deck before using shuffle()
+		deck.shuffle() # shuffle the deck
+		self.assertEqual(len(deck.cards), len_of_deck) # check if the number of cards in deck changes
+
+
 
 # PART 2:
 class Hand:
